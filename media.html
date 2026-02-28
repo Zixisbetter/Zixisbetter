@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zix Gaming - Media Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #0a1f44;
+            background: linear-gradient(135deg, #1e3a8a, #f8fafc, #1e3a8a);
+            background-size: 200% 200%;
+            animation: gentleShift 20s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes gentleShift {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 15px 20px;
+            background: rgba(30, 58, 138, 0.3);
+            backdrop-filter: blur(6px);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.6rem;
+            color: white;
+            text-shadow: 0 0 20px rgba(30, 58, 138, 0.8);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 15px 0 25px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            border: 1px solid #60a5fa;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: rgba(96,165,250,0.4);
+            transform: translateY(-2px);
+        }
+
+        .gallery {
+            max-width: 1200px;
+            width: 94%;
+            margin: 0 auto 40px;
+            padding: 0 10px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 14px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+            background: rgba(255,255,255,0.08);
+            transition: transform 0.35s, box-shadow 0.35s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.04);
+            box-shadow: 0 15px 50px rgba(30,58,138,0.6);
+        }
+
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img,
+        .gallery-item:hover video {
+            transform: scale(1.08);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 25px;
+            text-align: center;
+            color: #e0f2fe;
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .gallery-grid { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Zix Gaming Media</h1>
+        <a href="index.html" class="back-link">← Back to Main Page</a>
+    </header>
+
+    <div class="gallery">
+        <div class="gallery-grid">
+            <!-- === Add your pictures & videos here === -->
+            <!-- Just copy-paste lines like these and change the filenames -->
+
+            <div class="gallery-item">
+                <img src="photo1.jpg" alt="Image 1">
+            </div>
+
+            <div class="gallery-item">
+                <img src="photo2.jpg" alt="Image 2">
+            </div>
+
+            <div class="gallery-item">
+                <video controls loop muted>
+                    <source src="clip1.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- Keep adding more blocks ↓↓↓ as many as you want -->
+
+            <!-- <div class="gallery-item">
+                <img src="your-next-file.jpg" alt="Description">
+            </div> -->
+
+        </div>
+    </div>
+
+    <footer>
+        Powered by GitHub Pages • © 2026 Zix
+    </footer>
+
+</body>
+</html>
