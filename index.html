@@ -66,6 +66,7 @@
             border: 5px solid #ffffff;
             box-shadow: 0 0 30px rgba(30, 58, 138, 0.5);
             transition: transform 0.3s ease;
+            background: #ff0; /* Fallback yellow if image fails to load */
         }
 
         .profile-pic:hover {
@@ -75,7 +76,7 @@
         .profile-pic img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* Changed to contain so the full logo shows without cropping */
         }
 
         .discord {
@@ -145,65 +146,22 @@
             text-align: center;
         }
 
-        /* ────────────────────────────────────────────────
-           RESPONSIVE ADJUSTMENTS
-        ──────────────────────────────────────────────── */
+        /* RESPONSIVE ADJUSTMENTS */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            .profile-pic {
-                width: 150px;
-                height: 150px;
-                margin: 20px auto;
-                border-width: 4px;
-            }
-
-            .discord {
-                font-size: 1.2rem;
-                padding: 15px 25px;
-                margin: 25px 0;
-            }
-
-            .media-section h2 {
-                font-size: 1.7rem;
-                margin: 40px 0 20px;
-            }
-
-            .media-grid {
-                grid-template-columns: 1fr;
-                gap: 18px;
-            }
-
-            main {
-                padding: 15px 10px;
-            }
-
-            header {
-                padding: 40px 10px 25px;
-            }
+            h1 { font-size: 2.2rem; }
+            .profile-pic { width: 150px; height: 150px; margin: 20px auto; border-width: 4px; }
+            .discord { font-size: 1.2rem; padding: 15px 25px; margin: 25px 0; }
+            .media-section h2 { font-size: 1.7rem; margin: 40px 0 20px; }
+            .media-grid { grid-template-columns: 1fr; gap: 18px; }
+            main { padding: 15px 10px; }
+            header { padding: 40px 10px 25px; }
         }
 
         @media (max-width: 480px) {
-            h1 {
-                font-size: 1.9rem;
-            }
-
-            .profile-pic {
-                width: 130px;
-                height: 130px;
-            }
-
-            .discord {
-                font-size: 1.1rem;
-                padding: 12px 20px;
-            }
-
-            footer {
-                font-size: 0.85rem;
-                padding: 20px 10px;
-            }
+            h1 { font-size: 1.9rem; }
+            .profile-pic { width: 130px; height: 130px; }
+            .discord { font-size: 1.1rem; padding: 12px 20px; }
+            footer { font-size: 0.85rem; padding: 20px 10px; }
         }
     </style>
 </head>
@@ -215,15 +173,18 @@
 
     <main>
 
+        <!-- Profile Picture: Your ZIX GAMING logo -->
         <div class="profile-pic">
-            <img src="profile.jpg" alt="Profile Picture">
+            <img src="profile.jpg" alt="ZIX Gaming Logo">
         </div>
 
+        <!-- Discord Info -->
         <div class="discord">
             Main Discord: zix5865<br>
             Alt Discord: Kardistan_
         </div>
 
+        <!-- Custom Pictures / Videos Section -->
         <div class="media-section">
             <h2>My Media</h2>
             <div class="media-grid">
