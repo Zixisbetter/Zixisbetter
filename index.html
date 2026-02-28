@@ -65,7 +65,8 @@
             margin: 35px auto;
             box-shadow: 0 0 40px rgba(30, 58, 138, 0.7);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: #ff0; /* Yellow fallback in case image fails */
+            background: #ff0; /* Yellow fallback */
+            clip-path: circle(50% at 50% 50%); /* Hard circular crop – removes any edge artifacts */
         }
 
         .profile-pic:hover {
@@ -76,8 +77,8 @@
         .profile-pic img {
             width: 100%;
             height: 100%;
-            object-fit: cover;          /* <-- This makes it FILL the circle */
-            object-position: center;    /* Centers the crop */
+            object-fit: cover;           /* Fills the circle completely */
+            object-position: center 10%;  /* Slight vertical offset to better center and crop white edges */
         }
 
         .discord {
@@ -147,7 +148,7 @@
             text-align: center;
         }
 
-        /* RESPONSIVE ADJUSTMENTS */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
             .profile-pic { width: 220px; height: 220px; margin: 30px auto; }
@@ -174,22 +175,19 @@
 
     <main>
 
-        <!-- Profile Picture: ZIX GAMING logo – fills circle completely -->
+        <!-- Profile Picture – aggressive crop to eliminate white frame -->
         <div class="profile-pic">
             <img src="profile.jpg" alt="ZIX Gaming Logo">
         </div>
 
-        <!-- Discord Info -->
         <div class="discord">
             Main Discord: zix5865<br>
             Alt Discord: Kardistan_
         </div>
 
-        <!-- Custom Pictures / Videos Section -->
         <div class="media-section">
             <h2>My Media</h2>
             <div class="media-grid">
-                <!-- Replace src with your uploaded files or direct URLs -->
                 <div class="media-item">
                     <img src="image1.jpg" alt="Custom Image 1">
                 </div>
@@ -202,7 +200,6 @@
                         Your browser does not support video.
                     </video>
                 </div>
-                <!-- Add more <div class="media-item"> blocks here as needed -->
             </div>
         </div>
 
