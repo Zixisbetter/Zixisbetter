@@ -65,8 +65,8 @@
             margin: 35px auto;
             box-shadow: 0 0 40px rgba(30, 58, 138, 0.7);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: #ff0; /* Yellow fallback */
-            clip-path: circle(50% at 50% 50%); /* Hard circular crop – removes any edge artifacts */
+            background: #ff0;
+            clip-path: circle(50% at 50% 50%);
         }
 
         .profile-pic:hover {
@@ -77,8 +77,8 @@
         .profile-pic img {
             width: 100%;
             height: 100%;
-            object-fit: cover;           /* Fills the circle completely */
-            object-position: center 10%;  /* Slight vertical offset to better center and crop white edges */
+            object-fit: cover;
+            object-position: center 10%; /* Adjust this % if you want to shift the crop up/down */
         }
 
         .discord {
@@ -99,9 +99,27 @@
             transform: translateY(-4px);
         }
 
-        .media-section h2 {
-            font-size: 1.9rem;
-            margin: 50px 0 25px;
+        .gallery-link {
+            display: inline-block;
+            margin: 30px 0 50px;
+            padding: 14px 32px;
+            background: rgba(96,165,250,0.25);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.25rem;
+            border: 1px solid #60a5fa;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-link:hover {
+            background: rgba(96,165,250,0.45);
+            transform: translateY(-3px);
+        }
+
+        .teaser-media h2 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
             color: #ffffff;
             text-shadow: 0 0 15px rgba(30, 58, 138, 0.7);
         }
@@ -116,9 +134,9 @@
         .media-item {
             overflow: hidden;
             border-radius: 14px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.1);
         }
 
         .media-item:hover {
@@ -153,7 +171,8 @@
             h1 { font-size: 2.2rem; }
             .profile-pic { width: 220px; height: 220px; margin: 30px auto; }
             .discord { font-size: 1.2rem; padding: 15px 25px; margin: 25px 0; }
-            .media-section h2 { font-size: 1.7rem; margin: 40px 0 20px; }
+            .gallery-link { font-size: 1.15rem; padding: 12px 28px; }
+            .teaser-media h2 { font-size: 1.6rem; }
             .media-grid { grid-template-columns: 1fr; gap: 18px; }
             main { padding: 15px 10px; }
             header { padding: 40px 10px 25px; }
@@ -175,31 +194,34 @@
 
     <main>
 
-        <!-- Profile Picture – aggressive crop to eliminate white frame -->
+        <!-- Profile Picture -->
         <div class="profile-pic">
             <img src="profile.jpg" alt="ZIX Gaming Logo">
         </div>
 
+        <!-- Discord -->
         <div class="discord">
             Main Discord: zix5865<br>
             Alt Discord: Kardistan_
         </div>
 
-        <div class="media-section">
-            <h2>My Media</h2>
+        <!-- Link to full gallery page -->
+        <a href="media.html" class="gallery-link">
+            View Full Media Gallery →
+        </a>
+
+        <!-- Optional small teaser media on main page (you can remove or keep 1–3 items) -->
+        <div class="teaser-media">
+            <h2>Recent Highlights</h2>
             <div class="media-grid">
+                <!-- Example placeholders – replace or delete -->
                 <div class="media-item">
-                    <img src="image1.jpg" alt="Custom Image 1">
+                    <img src="highlight1.jpg" alt="Highlight 1">
                 </div>
                 <div class="media-item">
-                    <img src="image2.jpg" alt="Custom Image 2">
+                    <img src="highlight2.jpg" alt="Highlight 2">
                 </div>
-                <div class="media-item">
-                    <video controls loop muted>
-                        <source src="video1.mp4" type="video/mp4">
-                        Your browser does not support video.
-                    </video>
-                </div>
+                <!-- Add or remove as desired -->
             </div>
         </div>
 
