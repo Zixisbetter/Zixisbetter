@@ -5,24 +5,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zix Is Better</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; text-align: center; }
-        header { background-color: #007bff; color: white; padding: 40px; }
-        main { padding: 20px; margin: 20px auto; max-width: 800px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1, p { margin: 10px 0; }
-        footer { text-align: center; padding: 10px; background-color: #007bff; color: white; }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #0f00ff, #ff0000, #ff00aa); /* Vibrant blue-red-purple shift */
+            background-size: 300% 300%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* Subtle animated overlay for energy feel */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(0,255,255,0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(255,0,0,0.08) 0%, transparent 40%);
+            pointer-events: none;
+            animation: pulse 8s infinite alternate;
+            opacity: 0.6;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.4; transform: scale(1); }
+            100% { opacity: 0.7; transform: scale(1.05); }
+        }
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+        h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: bold;
+            text-shadow: 0 0 20px #ff00aa, 0 0 40px #00ffff, 0 0 60px #ff0000;
+            letter-spacing: 2px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff00aa, 0 0 20px #00ffff, 0 0 30px #ff0000; }
+            to   { text-shadow: 0 0 30px #ff00aa, 0 0 60px #00ffff, 0 0 90px #ff0000; }
+        }
+        main {
+            max-width: 1000px;
+            width: 90%;
+            padding: 30px 20px;
+            text-align: center;
+            z-index: 1;
+        }
+        .profile-pic {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 30px auto;
+            border: 6px solid #00ffff;
+            box-shadow: 0 0 40px #00ffff, 0 0 80px #ff00aa;
+            transition: transform 0.3s;
+        }
+        .profile-pic:hover {
+            transform: scale(1.1);
+        }
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .discord {
+            font-size: 1.6em;
+            margin: 40px 0;
+            padding: 20px 40px;
+            background: rgba(0,0,0,0.6);
+            border: 2px solid #00ffff;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 0 30px rgba(0,255,255,0.5);
+            transition: all 0.3s;
+        }
+        .discord:hover {
+            box-shadow: 0 0 60px rgba(0,255,255,0.8);
+            transform: translateY(-5px);
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+        .media-item {
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+        .media-item:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 50px rgba(255,0,170,0.6);
+        }
+        .media-item img, .media-item video {
+            width: 100%;
+            display: block;
+            transition: transform 0.4s;
+        }
+        .media-item:hover img, .media-item:hover video {
+            transform: scale(1.15);
+        }
+        footer {
+            margin-top: auto;
+            padding: 30px;
+            font-size: 1em;
+            opacity: 0.7;
+            text-shadow: 0 0 10px #000;
+        }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>Zix Is Better</h1>
+        <h1>I am better than 99.99% of all players</h1>
     </header>
 
     <main>
-        <p>I am Zix is better and I am 99.99% of players</p>
+
+        <!-- Profile Picture - upload your image as profile.jpg or change src -->
+        <div class="profile-pic">
+            <img src="profile.jpg" alt="Profile Picture">
+            <!-- Placeholder if needed: src="https://via.placeholder.com/220/00ffff/000?text=Zix" -->
+        </div>
+
+        <!-- Discord Info -->
+        <div class="discord">
+            Main Discord: zix5865<br>
+            Alt Discord: Kardistan_
+        </div>
+
+        <!-- Custom Pictures / Videos Section -->
+        <h2 style="font-size: 2.2em; margin: 60px 0 30px; text-shadow: 0 0 20px #ff00aa;">My Media</h2>
+        <div class="media-grid">
+            <!-- Replace src with your uploaded files or direct URLs -->
+            <div class="media-item">
+                <img src="image1.jpg" alt="Custom Image 1">
+            </div>
+            <div class="media-item">
+                <img src="image2.jpg" alt="Custom Image 2">
+            </div>
+            <div class="media-item">
+                <video controls loop muted>
+                    <source src="video1.mp4" type="video/mp4">
+                    Your browser does not support video.
+                </video>
+            </div>
+            <!-- Duplicate <div class="media-item"> blocks to add more -->
+        </div>
+
     </main>
 
     <footer>
-        <p>&copy; 2026 Zix Is Better</p>
+        Powered by GitHub Pages • © 2026 Zix
     </footer>
+
 </body>
 </html>
