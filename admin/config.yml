@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/zixisbetter.github.io   # ← Change to your actual repo (username/repo-name)
+  branch: main                                       # or master if that's your default branch
+  squash_merges: true                                # cleaner commit history
+
+media_folder: "media"           # folder where uploaded images/videos go
+public_folder: "/media"         # how the site accesses them (root-relative)
+
+# Optional: enable editorial workflow (draft → review → publish)
+publish_mode: editorial_workflow
+
+collections:
+  - name: "media"
+    label: "Media Gallery"
+    folder: "_data/media"       # we'll store metadata here (you can change)
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title / Caption", name: "title", widget: "string", required: true}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Media File", name: "file", widget: "file", allow_multiple: false, choose_url: false}
+      - {label: "Featured?", name: "featured", widget: "boolean", default: false}
+      - {label: "Tags", name: "tags", widget: "list", default: []}
