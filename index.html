@@ -58,26 +58,26 @@
         }
 
         .profile-pic {
-            width: 240px;
-            height: 240px;
+            width: 260px;
+            height: 260px;
             border-radius: 50%;
             overflow: hidden;
-            margin: 30px auto;
-            box-shadow: 0 0 35px rgba(30, 58, 138, 0.6);
+            margin: 35px auto;
+            box-shadow: 0 0 40px rgba(30, 58, 138, 0.7);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: #ff0; /* Yellow fallback for logo */
+            background: #ff0; /* Yellow fallback in case image fails */
         }
 
         .profile-pic:hover {
             transform: scale(1.08);
-            box-shadow: 0 0 55px rgba(30, 58, 138, 0.9);
+            box-shadow: 0 0 60px rgba(30, 58, 138, 1);
         }
 
         .profile-pic img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Ensures full logo is visible */
-            background: #ff0; /* Matches logo bg if transparency issues */
+            object-fit: cover;          /* <-- This makes it FILL the circle */
+            object-position: center;    /* Centers the crop */
         }
 
         .discord {
@@ -150,7 +150,7 @@
         /* RESPONSIVE ADJUSTMENTS */
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
-            .profile-pic { width: 200px; height: 200px; margin: 25px auto; }
+            .profile-pic { width: 220px; height: 220px; margin: 30px auto; }
             .discord { font-size: 1.2rem; padding: 15px 25px; margin: 25px 0; }
             .media-section h2 { font-size: 1.7rem; margin: 40px 0 20px; }
             .media-grid { grid-template-columns: 1fr; gap: 18px; }
@@ -160,7 +160,7 @@
 
         @media (max-width: 480px) {
             h1 { font-size: 1.9rem; }
-            .profile-pic { width: 160px; height: 160px; margin: 20px auto; }
+            .profile-pic { width: 180px; height: 180px; margin: 25px auto; }
             .discord { font-size: 1.1rem; padding: 12px 20px; }
             footer { font-size: 0.85rem; padding: 20px 10px; }
         }
@@ -174,7 +174,7 @@
 
     <main>
 
-        <!-- Profile Picture: Your ZIX GAMING logo – no white border, larger fit -->
+        <!-- Profile Picture: ZIX GAMING logo – fills circle completely -->
         <div class="profile-pic">
             <img src="profile.jpg" alt="ZIX Gaming Logo">
         </div>
